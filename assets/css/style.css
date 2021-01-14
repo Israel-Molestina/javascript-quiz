@@ -1,0 +1,30 @@
+.border {
+    background-color: rgb(231, 230, 230);
+    margin-top: 100px;
+    margin-bottom: 90px;
+    padding-bottom: 20px;
+}
+
+.header-background {
+    /* background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url(../pics/header-background.jpg); */
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: 'Lobster', cursive;
+}
+
+#navflex {
+    justify-content: flex-end;
+}
+
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
