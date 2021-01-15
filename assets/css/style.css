@@ -12,12 +12,12 @@
             rgba(0, 0, 0, 0.4)
         ),
         url(../pics/header-background.jpg); */
-    padding-top: 25px;
+    padding-top: 25pxx;
     padding-bottom: 20px;
 }
 
 h1 {
-    color: whitesmoke;
+    color: rgb(240, 118, 118);
     font-family: 'Lobster', cursive;
 }
 
@@ -28,3 +28,18 @@ h1 {
 .ubuntu {
     font-family: 'Ubuntu', sans-serif;
 }
+
+/* .btn {
+    border: none;
+    background-color: hsl(268, 52%, 60%);
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  } */

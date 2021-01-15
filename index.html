@@ -28,7 +28,7 @@
 
 <body>
 
-    <!--top navigation bar-->
+    <!--Top bar with high scores and timer-->
     <section class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <section class="container">
 
@@ -51,31 +51,31 @@
 
     <main class="container border">
 
-        <!--header for about page-->
+        <!--header that will hold the questions-->
         <header class="row header-background">
             <h1 class="col-sm-9 text-center display-3">
-                Israel Molestina
+                Quiz Questions
             </h1>   
         </header>
 
         <hr/>
 
-        <!--first section about me-->
+        <!--section will hold the multiple choice answers-->
         <section class="row justify-content-center">
 
             <div class="col-sm-9">
 
                 <div class="row">
                     <div class="d-block clearfix">
-
-                        <figure>
-                            <img src="assets/pics/proffesional-headshot.JPG" class="float-start m-3 img-thumbnail" id="headshot" alt="headshot of me"/>
-                        </figure>
                         
-                        <article>
-                            <p class="ubuntu">
-                                My name is Israel Molestina. I was born in Ecuador and moved to the states when I was five. I’ve moved around quite a bit, eventually graduating high school in Chapel Hill NC, and attended University of North Carolina at Asheville. In Asheville I found a passion for leadership. My first year of living in Asheville I found myself as the manager of a small farm. Being responsible for livestock the grounds and a few other employees. Shortly thereafter I started work at a local cocktail bar as a barback. Within a year I moved up to bartender and then bar manager. Through these experiences I learned many skills including time and financial management. But the most important in my opinion is helping and uplifting those around me to their best potential. As a manager, I found it important to always help and encourage my employees. As opposed to some of the more traditional and stricter methods like micromanaging. Although I enjoyed my work and what came with it, the hours were grueling. Often 50+ hours a week and coming home at three or four in the morning. This was unsustainable for me and my family life. 
+                        <article id="question">
+                            <p class="ubuntu" >
+                                Quiz multiple choices
                             </p>
+                        </article>
+                        
+                        <article id="answers">
+                            <button id="start">Start Quiz</button>
                         </article>
 
                     </div>
@@ -85,7 +85,8 @@
         </section>
 
     </main>
-  
-</body>
 
+    <script src="assets/js/script.js"></script>
+    
+</body>
 </html>
