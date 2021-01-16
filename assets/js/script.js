@@ -2,26 +2,25 @@
 var start = document.querySelector("#start");
 var question = document.querySelector("#question");
 var answers = document.querySelector("#answers");
-var hide = document.querySelector("#hide");
 var multi = document.querySelector("#multi");
 
 // Added event listener to start quiz button
 start.addEventListener("click", startQuiz);
 
-// Creates h1 tag for the questions
-var h1 = document.createElement("h1");
+// Create section element for buttons
+var btnSection = document.createElement("section");
 
-// Create ordered list element
-var listOl = document.createElement("ol");
+//create buttons
+var btn1 = document.createElement("button");
+var btn2 = document.createElement("button");
+var btn3 = document.createElement("button");
+var btn4 = document.createElement("button");
 
-//create ordered list items
-var li1 = document.createElement("li");
-var li2 = document.createElement("li");
-var li3 = document.createElement("li");
-var li4 = document.createElement("li");
-
-h1.textContent = "first question";
-h1.setAttribute("style", "col-sm-9 text-center display-3");
+// sets class attribute to buttons
+btn1.classList.add("btn");
+btn2.classList.add("btn");
+btn3.classList.add("btn");
+btn4.classList.add("btn");
 
 // variable to hold number of correct answers
 var correctAnswers = 0;
@@ -33,65 +32,72 @@ var incorrectAnswers = 0;
 var time = 60;
 
 // object holds all questions as keys and answers as values
-var questionsAndAnswers = {
+var qAndA = [
 
-    "question1": [
-        "answer1",
-        "answer2",
-        "answer3",
-        "answer4"
-    ],
+    {question1: "question1",
+    choice1: "answer1",
+    choice2: "answer2",
+    choice3: "answer3",
+    choice4: "answer4",
+    correct: "answer3",
+    },
 
-    "question2": [
-        "answer1",
-        "answer2",
-        "answer3",
-        "answer4"
-    ],
-
-    "question3": [
-        "answer1",
-        "answer2",
-        "answer3",
-        "answer4"
-    ],
-
-    "question4": [
-        "answer1",
-        "answer2",
-        "answer3",
-        "answer4"
-    ],
     
-}
+    {question2: "Question2",
+    answer1: "answer1",
+    answer2: "answer2",
+    answer3: "answer3",
+    answer4: "answer4",
+    correct: "answer2",
+    },  
 
-function quiz() {
+    {question3: "Questions3",
+    answer1: "answer1",
+    answer2: "answer2",
+    answer3: "answer3",
+    answer4: "answer4",
+    correct: "answer4",
+    },
 
-    alert("hi")
-    document.getElementsById("start").style.display = "none";
-}
+    {question4: "questions4",
+    answer1: "answer1",
+    answer2: "answer2",
+    answer3: "answer3",
+    answer4: "answer4",
+    correct: "answer1",
+    },
+
+    {question5: "questions5",
+    answer1: "answer1",
+    answer2: "answer2",
+    answer3: "answer3",
+    answer4: "answer4",
+    correct: "answer4",
+    }
+];
+
+// function quiz() {
+
+//     alert("hi")
+//     document.getElementsById("start").style.display = "none";
+
+// }
 
 function startQuiz() {
 
     // Hides the content on page once start quiz button is pressed
-    hide.style.display = "none";
     start.style.display = "none";
     multi.style.display = "none";
 
-    // appends h1 tag for question
-    question.appendChild(h1);
-
+    // replaces h1 tag with questions
+    question.innerHTML = Object.keys(qAndA);
 
     // appends an ordered list and list items for the multiple choice answers
-    answers.appendChild(listOl);
-    listOl.appendChild(li1);
-    listOl.appendChild(li2);
-    listOl.appendChild(li3);
-    listOl.appendChild(li4);
-
-
-
-    
+    answers.appendChild(btnSection);
+    btnSection.appendChild(btn1);
+    btnSection.appendChild(btn2);
+    btnSection.appendChild(btn3);
+    btnSection.appendChild(btn4);
 
     // var quiz = quiz();
 
