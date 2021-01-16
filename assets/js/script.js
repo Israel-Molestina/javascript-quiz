@@ -86,8 +86,8 @@ var qAndA = [
 function startQuiz() {
 
     // Hides the content on page once start quiz button is pressed
-    start.style.display = "none";
-    multi.style.display = "none";
+    multi.remove();
+    start.remove();
 
     // replaces h1 tag with questions
     question.innerHTML = Object.keys(qAndA);
