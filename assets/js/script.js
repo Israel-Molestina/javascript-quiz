@@ -3,6 +3,7 @@ var start = document.querySelector("#start");
 var question = document.querySelector("#question");
 var answers = document.querySelector("#answers");
 var multi = document.querySelector("#multi");
+var timer = document.querySelector("#time");
 
 // Added event listener to start quiz button
 start.addEventListener("click", startQuiz);
@@ -22,19 +23,19 @@ btn2.classList.add("btn");
 btn3.classList.add("btn");
 btn4.classList.add("btn");
 
-// variable to hold number of correct answers
+// variables to hold number of correct and incorrect answers
 var correctAnswers = 0;
-
-// variable to hold number of incorrect answers
 var incorrectAnswers = 0;
 
+var index = 0;
+
 // variable to hold the time
-var time = 60;
+var time = 30;
 
 // object holds all questions as keys and answers as values
 var qAndA = [
 
-    {question1: "question1",
+    {question: "question1",
     choice1: "answer1",
     choice2: "answer2",
     choice3: "answer3",
@@ -43,7 +44,7 @@ var qAndA = [
     },
 
     
-    {question2: "Question2",
+    {question: "Question2",
     answer1: "answer1",
     answer2: "answer2",
     answer3: "answer3",
@@ -51,7 +52,7 @@ var qAndA = [
     correct: "answer2",
     },  
 
-    {question3: "Questions3",
+    {question: "Questions3",
     answer1: "answer1",
     answer2: "answer2",
     answer3: "answer3",
@@ -59,7 +60,7 @@ var qAndA = [
     correct: "answer4",
     },
 
-    {question4: "questions4",
+    {question: "questions4",
     answer1: "answer1",
     answer2: "answer2",
     answer3: "answer3",
@@ -67,7 +68,7 @@ var qAndA = [
     correct: "answer1",
     },
 
-    {question5: "questions5",
+    {question: "questions5",
     answer1: "answer1",
     answer2: "answer2",
     answer3: "answer3",
@@ -76,21 +77,19 @@ var qAndA = [
     }
 ];
 
-// function quiz() {
-
-//     alert("hi")
-//     document.getElementsById("start").style.display = "none";
-
-// }
-
 function startQuiz() {
+
+     // calls the timer funciton to run
+     startTimer();
 
     // Hides the content on page once start quiz button is pressed
     multi.remove();
     start.remove();
 
+    currentQuestion = qAndA[index];
     // replaces h1 tag with questions
-    question.innerHTML = Object.keys(qAndA);
+    question.textContent = currentQuestion.question;
+    
 
     // appends an ordered list and list items for the multiple choice answers
     answers.appendChild(btnSection);
@@ -99,8 +98,21 @@ function startQuiz() {
     btnSection.appendChild(btn3);
     btnSection.appendChild(btn4);
 
-    // var quiz = quiz();
+    
 
-    // var timer = startTimer();
+};
 
+// function that starts the timer
+function startTimer() {
+
+    var timerInterval = setInterval(function() {
+        time--;
+        timer.textContent = time;
+
+        // If statemt stops timer at 0
+        if(time === 0) {
+            clearInterval(timerInterval);
+        }
+
+    }, 1000);
 }
