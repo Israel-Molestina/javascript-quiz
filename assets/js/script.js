@@ -126,10 +126,7 @@ block.addEventListener("click", function(event) {
             showP.textContent = "Correct!";
             correctAnswers++;
             index++;
-             // replaces h1 tag with questions
-            question.textContent = qAndA[index].question;
-            
-
+        
         }
 
         else {
@@ -138,14 +135,13 @@ block.addEventListener("click", function(event) {
             showP.textContent = "Incorrect";
             time -= 5;
             index++;
-             // replaces h1 tag with questions
-            question.textContent = qAndA[index].question;
 
         }
 
-        index++;
+         // replaces h1 tag with the following questions
+        question.textContent = qAndA[index].question;
 
-        // insterts first set of choices
+        // insterts following set of choices
         btn1.textContent = qAndA[index].choice1
         btn2.textContent = qAndA[index].choice2
         btn3.textContent = qAndA[index].choice3
