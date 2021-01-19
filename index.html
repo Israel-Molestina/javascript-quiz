@@ -76,9 +76,11 @@
                                 Try to answer as many questions correctly in the time alloted. Each incorrect guess will run down your time by 5 seconds. Good luck!
                             </p>
 
+                            <button id="btnStart">Start Quiz</button>
+
                         </article>
 
-                        <section id="none" style="display:none">
+                        <section id="choices" style="display:none">
 
                             <button class="btn" id="choice1"></button>
                             <button class="btn" id="choice2"></button>
@@ -99,12 +101,19 @@
                             </fieldset>
 
                         </section>
-                        
-                        <article>
 
-                            <button id="btnStart">Start Quiz</button>
+                        <section id="scoreSect" style="display: none;">
 
-                        </article>
+                            <fieldset id="hsOutput">
+
+                                <div id ="lsOutput"></div>
+
+                            </fieldset>
+
+                            <button type="button" id="btnBack">Go Back</button>
+                            <button type="button" id="btnReset">Reset High Scores</button>
+
+                        </section>
 
                     </div>
 

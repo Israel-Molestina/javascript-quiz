@@ -4,7 +4,7 @@ var sectionOne = document.querySelector("#sectionOne");
 var sectionTwo = document.querySelector("#sectionTwo");
 var rules = document.querySelector("#rules");
 var timer = document.querySelector("#time");
-var block = document.querySelector("#none");
+var choices = document.querySelector("#choices");
 var btn1 = document.querySelector("#choice1");
 var btn2 = document.querySelector("#choice2");
 var btn3 = document.querySelector("#choice3");
@@ -12,6 +12,11 @@ var btn4 = document.querySelector("#choice4");
 var form = document.querySelector("#form");
 var inpIni = document.querySelector("#inpIni");
 var btnIni = document.querySelector("#btnIni");
+var lsOutput = document.querySelector("#lsOutput")
+var scoreSect = document.querySelector("#scoreSect")
+var btnBack = document.querySelector("#btnBack");
+var btnReset = document.querySelector("#btnReset");
+var hsOutput = document.querySelector("#hsOutput");
 
 // variables to hold number of correct and incorrect answers
 var correctAnswers = 0;
@@ -22,10 +27,8 @@ var index = 0;
 // variable to hold the time
 var time = 30;
 
-// creates an element to show if answer was correct or incorrect
+// Element creators
 var showP = document.createElement("p");
-
-// creates an h1 tag
 var h1 = document.createElement("h1");
 
 // object holds all questions as keys and answers as values
@@ -97,7 +100,7 @@ function startQuiz() {
 // changes display of buttons so they appear when start quiz button is clicked
 function showBtn() {
 
-    block.style.display = "block";
+    choices.style.display = "block";
 
 };
 
@@ -111,7 +114,7 @@ function startTimer() {
         // stops timer at 0
         if(time === 0 || time < 0 || index >= 5) {
             clearInterval(timerInterval);
-            highScore();
+            finished();
             timer.textContent = "0"
         }
 
@@ -119,9 +122,9 @@ function startTimer() {
 }
 
 // function to stop the questions and introduce a form for user to input initials
-function highScore() {
+function finished() {
 
-    block.remove();
+    choices.remove();
     sectionOne.textContent = "Finished!";
     sectionTwo.appendChild(h1);
     h1.textContent = "Your final score is" + " " + correctAnswers + "!";
@@ -129,12 +132,27 @@ function highScore() {
     
 }
 
+// function that is called once user submits initials. Will show all highscores stored in local storage
+function highScore() {
+    sectionOne.textContent = "HighScores"
+    h1.remove();
+    form.remove();
+    scoreSect.style.display = "block";
+
+    for (var i = 0; i < localStorage.length; i++) {
+
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+
+        lsOutput.innerHTML += `${key}: ${value}<br/>`;
+    }
+}
 
 // Added event listener to start quiz button
 btnStart.addEventListener("click", startQuiz);
 
 // event listener for the answer buttons
-block.addEventListener("click", function(event) {
+choices.addEventListener("click", function(event) {
 
     event.preventDefault();
 
@@ -144,7 +162,7 @@ block.addEventListener("click", function(event) {
 
         if (userAnswer === qAndA[index].correct) {
 
-            block.appendChild(showP);
+            choices.appendChild(showP);
             showP.textContent = "Correct!";
             correctAnswers++;
             index++;
@@ -153,7 +171,7 @@ block.addEventListener("click", function(event) {
 
         else {
             
-            block.appendChild(showP);
+            choices.appendChild(showP);
             showP.textContent = "Incorrect";
             time -= 5;
             index++;
@@ -163,7 +181,8 @@ block.addEventListener("click", function(event) {
         // calls highScore function once all questions have been asked
         if (index >= 5) {
 
-            highScore();
+            finished();
+            return;
             
         }
 
@@ -177,4 +196,34 @@ block.addEventListener("click", function(event) {
         btn4.textContent = qAndA[index].choice4
 
     }
+});
+
+// event listener for when user submits initials. will store high scores in local storage
+btnIni.addEventListener("click", function() {
+
+    var key = inpIni.value;
+    var value = correctAnswers;
+    console.log(value);
+    console.log(key);
+
+    if (value && value) {
+        
+        localStorage.setItem(key, value);
+        highScore();
+    }
+});
+
+// event listener that takes user back to main page
+btnBack.addEventListener("click", function(){
+
+    location.reload();
+
+});
+
+btnReset.addEventListener("click", function(){
+
+    localStorage.clear();
+
+    hsOutput.style.display = "none";
+
 });
