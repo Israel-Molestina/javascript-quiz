@@ -17,6 +17,11 @@ var scoreSect = document.querySelector("#scoreSect")
 var btnBack = document.querySelector("#btnBack");
 var btnReset = document.querySelector("#btnReset");
 var hsOutput = document.querySelector("#hsOutput");
+var viewHS = document.querySelector("#viewHS");
+
+// changes style of cursor when hovering over high score and time on main page
+viewHS.style.cursor = "pointer";
+timer.style.cursor = "default";
 
 // variables to hold number of correct and incorrect answers
 var correctAnswers = 0;
@@ -164,6 +169,7 @@ choices.addEventListener("click", function(event) {
 
             choices.appendChild(showP);
             showP.textContent = "Correct!";
+            showP.style.display = "center";
             correctAnswers++;
             index++;
         
@@ -220,6 +226,7 @@ btnBack.addEventListener("click", function(){
 
 });
 
+// event listener that resets highscores and clears them from local storage
 btnReset.addEventListener("click", function(){
 
     localStorage.clear();
@@ -227,3 +234,12 @@ btnReset.addEventListener("click", function(){
     hsOutput.style.display = "none";
 
 });
+
+// event listener for when user clicks view high score on main page
+viewHS.addEventListener("click", function(){
+
+    highScore();
+    rules.remove();
+    btnStart.remove(); 
+
+})
