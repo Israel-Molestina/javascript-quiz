@@ -53,9 +53,11 @@
 
         <!--header that will hold the questions-->
         <header class="row header-background">
+
             <h1 class="col-sm-9 text-center display-3" id="question">
                 JavaScript Quiz!
             </h1>   
+
         </header>
 
         <hr/>
@@ -69,9 +71,11 @@
                     <div class="d-block clearfix">
                         
                         <article id="answers">
+
                             <p class="ubuntu" id="multi">
                                 Try to answer as many questions correctly in the time alloted. Each incorrect guess will run down your time by 5 seconds. Good luck!
                             </p>
+
                         </article>
 
                         <section id="none" style="display:none">
@@ -83,8 +87,25 @@
 
                         </section>
                         
+                        <!--this sections holds the form for the initials and the final scores-->
+                        <section id="form" style="display: none;">
+
+                            <form class="form-inline">
+                                <div class="form-group">
+
+                                  <label for="inputInitials">Initials</label>
+                                  <input type="initials" id="inputInitials" class="form-control mx-sm-3" aria-describedby="initialHelpInline">
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                                </div>
+                            </form>
+
+                        </section>
+                        
                         <article>
+
                             <button id="start">Start Quiz</button>
+
                         </article>
 
                     </div>

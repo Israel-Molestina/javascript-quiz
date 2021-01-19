@@ -9,6 +9,7 @@ var btn1 = document.querySelector("#choice1");
 var btn2 = document.querySelector("#choice2");
 var btn3 = document.querySelector("#choice3");
 var btn4 = document.querySelector("#choice4");
+var form = document.querySelector("#form");
 
 // variables to hold number of correct and incorrect answers
 var correctAnswers = 0;
@@ -21,6 +22,9 @@ var time = 30;
 
 // creates an element to show if answer was correct or incorrect
 var showP = document.createElement("p");
+
+// creates an h1 tag
+var h1 = document.createElement("h1");
 
 // object holds all questions as keys and answers as values
 var qAndA = [
@@ -69,6 +73,10 @@ var qAndA = [
 
 function startQuiz() {
 
+     // Hides the content on page once start quiz button is pressed
+     multi.remove();
+     start.remove(); 
+
     showBtn();
      // calls the timer funciton to run
     startTimer();
@@ -82,12 +90,9 @@ function startQuiz() {
     btn3.textContent = qAndA[index].choice3
     btn4.textContent = qAndA[index].choice4
 
-    // Hides the content on page once start quiz button is pressed
-    multi.remove();
-    start.remove();
-    
 };
 
+// changes display of buttons so they appear when start quiz button is clicked
 function showBtn() {
 
     block.style.display = "block";
@@ -104,14 +109,28 @@ function startTimer() {
         // stops timer at 0
         if(time === 0) {
             clearInterval(timerInterval);
+            highScore();
         }
 
     }, 1000);
 }
 
+// function to stop the questions and introduce a form for user to input initials
+function highScore() {
+
+    block.remove();
+    question.textContent = "Finished!";
+    answers.appendChild(h1);
+    h1.textContent = "Your final score is" + " " + correctAnswers + "!";
+    form.style.display = "block";
+    
+}
+
+
 // Added event listener to start quiz button
 start.addEventListener("click", startQuiz);
 
+// event listener for the answer buttons
 block.addEventListener("click", function(event) {
 
     event.preventDefault();
@@ -136,6 +155,13 @@ block.addEventListener("click", function(event) {
             time -= 5;
             index++;
 
+        }
+
+        // calls highScore function once all questions have been asked
+        if (index >= 5) {
+
+            highScore();
+            
         }
 
          // replaces h1 tag with the following questions
