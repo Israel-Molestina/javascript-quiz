@@ -19,47 +19,50 @@ var index = 0;
 // variable to hold the time
 var time = 30;
 
+// creates an element to show if answer was correct or incorrect
+var showP = document.createElement("p");
+
 // object holds all questions as keys and answers as values
 var qAndA = [
 
-    {question: "question1",
-    choice1: "a",
-    choice2: "b",
-    choice3: "c",
-    choice4: "d",
+    {question: "What the correct code for creating a new paragraph element?",
+    choice1: 'document.createTag("p")',
+    choice2: 'document.createTag("<p>")',
+    choice3: 'document.createElement("p")',
+    choice4: 'document.createElement("<p>")',
     correct: "choice3",
     },
 
     
-    {question: "Question2",
-    choice1: "answer1",
-    choice2: "answer2",
-    choice3: "answer3",
-    choice4: "answer4",
+    {question: "What is JSON.stringify used for?",
+    choice1: "To convert something into an integer",
+    choice2: "To convert something into a string",
+    choice3: "To convert something into an array",
+    choice4: "To convert something into string cheese",
     correct: "choice2",
     },  
 
-    {question: "Questions3",
-    choice1: "1",
-    choice2: "2",
-    choice3: "3",
-    choice4: "4",
+    {question: 'What will document.querySelector("#chapter") do?',
+    choice1: "It will search through the document and grab every element excepet for the one with the class chapter",
+    choice2: "It will search through the document and grab every element excepet for the one with the id chapter",
+    choice3: "It will search through the document and grab the elements with the class chapter",
+    choice4: "It will search through the document and grab the element with the id chapter",
     correct: "choice4",
     },
 
-    {question: "questions4",
-    choice1: "answer1",
-    choice2: "answer2",
-    choice3: "answer3",
-    choice4: "answer4",
+    {question: "What will the method event.stopProgpagation() accomplish",
+    choice1: "It will prevent the current event from propagating, or bubbling up, to its parent elements",
+    choice2: "It will force the current event to propagate, or bubble up, to its parent elements",
+    choice3: "This is not a valid method in JavaScript",
+    choice4: "It will prevent the current event from propagating, or bubbling down, to its children elements",
     correct: "choice1",
     },
 
-    {question: "questions5",
-    choice1: "answer1",
-    choice2: "answer2",
-    choice3: "answer3",
-    choice4: "answer4",
+    {question: "Wich of the follow is a correct way to set up a for loop",
+    choice1: "for (var i = 0; i < lenght; i++) {}",
+    choice2: "for (var i = 0; i < lenght; i--) {}",
+    choice3: "for (i = 0; i < lenght; i++) {}",
+    choice4: "All of these are valid for loops",
     correct: "choice4",
     }
 ];
@@ -98,7 +101,7 @@ function startTimer() {
         time--;
         timer.textContent = time;
 
-        // If statemt stops timer at 0
+        // stops timer at 0
         if(time === 0) {
             clearInterval(timerInterval);
         }
@@ -119,13 +122,24 @@ block.addEventListener("click", function(event) {
 
         if (userAnswer === qAndA[index].correct) {
 
+            block.appendChild(showP);
+            showP.textContent = "Correct!";
             correctAnswers++;
+            index++;
+             // replaces h1 tag with questions
+            question.textContent = qAndA[index].question;
+            
 
         }
 
         else {
             
+            block.appendChild(showP);
+            showP.textContent = "Incorrect";
             time -= 5;
+            index++;
+             // replaces h1 tag with questions
+            question.textContent = qAndA[index].question;
 
         }
 
@@ -136,6 +150,6 @@ block.addEventListener("click", function(event) {
         btn2.textContent = qAndA[index].choice2
         btn3.textContent = qAndA[index].choice3
         btn4.textContent = qAndA[index].choice4
-        
+
     }
 });
