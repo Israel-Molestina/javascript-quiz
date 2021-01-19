@@ -54,7 +54,7 @@
         <!--header that will hold the questions-->
         <header class="row header-background">
 
-            <h1 class="col-sm-9 text-center display-3" id="question">
+            <h1 class="col-sm-9 text-center display-3" id="sectionOne">
                 JavaScript Quiz!
             </h1>   
 
@@ -70,9 +70,9 @@
                 <div class="row">
                     <div class="d-block clearfix">
                         
-                        <article id="answers">
+                        <article id="sectionTwo">
 
-                            <p class="ubuntu" id="multi">
+                            <p class="ubuntu" id="rules">
                                 Try to answer as many questions correctly in the time alloted. Each incorrect guess will run down your time by 5 seconds. Good luck!
                             </p>
 
@@ -90,21 +90,19 @@
                         <!--this sections holds the form for the initials and the final scores-->
                         <section id="form" style="display: none;">
 
-                            <form class="form-inline">
-                                <div class="form-group">
+                            <fieldset>
 
-                                  <label for="inputInitials">Initials</label>
-                                  <input type="initials" id="inputInitials" class="form-control mx-sm-3" aria-describedby="initialHelpInline">
-                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                <legend>Input Initials</legend>
+                                <input id="inpIni" type="text" placeholder="Enter Initials..."/>
+                                <button type="button" id="btnIni">Submit</button>
 
-                                </div>
-                            </form>
+                            </fieldset>
 
                         </section>
                         
                         <article>
 
-                            <button id="start">Start Quiz</button>
+                            <button id="btnStart">Start Quiz</button>
 
                         </article>
 

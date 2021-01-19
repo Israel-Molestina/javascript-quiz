@@ -44,6 +44,7 @@ h1 {
     cursor: pointer;
   }
 
-  #form-padding {
-      padding-right: 25%;
+  fieldset {
+      margin-bottom: 20px;
+      border: thick;
   }

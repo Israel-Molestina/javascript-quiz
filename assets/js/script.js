@@ -1,8 +1,8 @@
 // Assignment Codes
-var start = document.querySelector("#start");
-var question = document.querySelector("#question");
-var answers = document.querySelector("#answers");
-var multi = document.querySelector("#multi");
+var btnStart = document.querySelector("#btnStart");
+var sectionOne = document.querySelector("#sectionOne");
+var sectionTwo = document.querySelector("#sectionTwo");
+var rules = document.querySelector("#rules");
 var timer = document.querySelector("#time");
 var block = document.querySelector("#none");
 var btn1 = document.querySelector("#choice1");
@@ -10,6 +10,8 @@ var btn2 = document.querySelector("#choice2");
 var btn3 = document.querySelector("#choice3");
 var btn4 = document.querySelector("#choice4");
 var form = document.querySelector("#form");
+var inpIni = document.querySelector("#inpIni");
+var btnIni = document.querySelector("#btnIni");
 
 // variables to hold number of correct and incorrect answers
 var correctAnswers = 0;
@@ -74,15 +76,15 @@ var qAndA = [
 function startQuiz() {
 
      // Hides the content on page once start quiz button is pressed
-     multi.remove();
-     start.remove(); 
+     rules.remove();
+     btnStart.remove(); 
 
     showBtn();
      // calls the timer funciton to run
     startTimer();
 
     // replaces h1 tag with questions
-    question.textContent = qAndA[index].question;
+    sectionOne.textContent = qAndA[index].question;
 
     // insterts first set of choices
     btn1.textContent = qAndA[index].choice1
@@ -107,9 +109,10 @@ function startTimer() {
         timer.textContent = time;
 
         // stops timer at 0
-        if(time === 0) {
+        if(time === 0 || time < 0 || index >= 5) {
             clearInterval(timerInterval);
             highScore();
+            timer.textContent = "0"
         }
 
     }, 1000);
@@ -119,8 +122,8 @@ function startTimer() {
 function highScore() {
 
     block.remove();
-    question.textContent = "Finished!";
-    answers.appendChild(h1);
+    sectionOne.textContent = "Finished!";
+    sectionTwo.appendChild(h1);
     h1.textContent = "Your final score is" + " " + correctAnswers + "!";
     form.style.display = "block";
     
@@ -128,7 +131,7 @@ function highScore() {
 
 
 // Added event listener to start quiz button
-start.addEventListener("click", startQuiz);
+btnStart.addEventListener("click", startQuiz);
 
 // event listener for the answer buttons
 block.addEventListener("click", function(event) {
@@ -165,7 +168,7 @@ block.addEventListener("click", function(event) {
         }
 
          // replaces h1 tag with the following questions
-        question.textContent = qAndA[index].question;
+        sectionOne.textContent = qAndA[index].question;
 
         // insterts following set of choices
         btn1.textContent = qAndA[index].choice1
