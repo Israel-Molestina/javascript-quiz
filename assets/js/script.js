@@ -59,8 +59,8 @@ var qAndA = [
     },  
 
     {question: 'What will document.querySelector("#chapter") do?',
-    choice1: "It will search through the document and grab every element excepet for the one with the class chapter",
-    choice2: "It will search through the document and grab every element excepet for the one with the id chapter",
+    choice1: "It will search through the document and grab every element except for the one with the class chapter",
+    choice2: "It will search through the document and grab every element except for the one with the id chapter",
     choice3: "It will search through the document and grab the elements with the class chapter",
     choice4: "It will search through the document and grab the element with the id chapter",
     correct: "choice4",
@@ -91,7 +91,7 @@ function startQuiz() {
      jsQuiz.remove();
 
     showBtn();
-     // calls the timer funciton to run
+     // calls the timer function to run
     startTimer();
 
     // replaces h1 tag with questions
@@ -140,7 +140,7 @@ function finished() {
     
 };
 
-// function that is called once user submits initials. Will show all highscores stored in local storage
+// function that is called once user submits initials. Will show all high scores stored in local storage
 function highScore() {
 
     sectionOne.textContent = "HighScores"
@@ -216,7 +216,7 @@ choices.addEventListener("click", function(event) {
 
         }
 
-        // calls highScore function once all questions have been asked
+        // calls high Score function once all questions have been asked
         if (index >= 5) {
 
             finished();
@@ -227,7 +227,7 @@ choices.addEventListener("click", function(event) {
          // replaces h1 tag with the following questions
         sectionOne.textContent = qAndA[index].question;
 
-        // insterts following set of choices
+        // inserts following set of choices
         btn1.textContent = qAndA[index].choice1
         btn2.textContent = qAndA[index].choice2
         btn3.textContent = qAndA[index].choice3
@@ -256,7 +256,7 @@ btnBack.addEventListener("click", function(){
 
 });
 
-// event listener that resets highscores and clears them from local storage
+// event listener that resets high scores and clears them from local storage
 btnReset.addEventListener("click", function(){
 
     localStorage.clear();
