@@ -8,7 +8,7 @@ As a coding boot camp student, I wanted to make a quiz on JavaScript fundamental
 
 ## The Application
 
-To accomplish this task, I've created an application using mainly Javascript that administers a quiz to the user. The application works as follows:
+To accomplish this task, I've created an application, using mainly JavaScript, that administers a quiz to the user. The application works as follows:
 
 * When the user clicks the start button, a timer starts and they are presented with the first question.
 
@@ -20,4 +20,11 @@ To accomplish this task, I've created an application using mainly Javascript tha
 
 * The initials and scores are stored locally and are shown in the high score page.
 
+* The user may reset the high scores using the reset button
+
+* The user may view the high scores at any time by clicking the "View High Scores" button on the top left
+
 ## Below is a link to the finished application along with screenshots of quiz
+
+### [JavaScript Quiz] (https://israel-molestina.github.io/javascript-quiz/)
+
