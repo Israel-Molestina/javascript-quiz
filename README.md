@@ -26,5 +26,5 @@ To accomplish this task, I've created an application, using mainly JavaScript, t
 
 ## Below is a link to the finished application along with screenshots of quiz
 
-### [JavaScript Quiz] (https://israel-molestina.github.io/javascript-quiz/)
+### [JavaScript Quiz](https://israel-molestina.github.io/javascript-quiz/)
 
