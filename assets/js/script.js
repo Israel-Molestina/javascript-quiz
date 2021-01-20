@@ -268,6 +268,7 @@ btnReset.addEventListener("click", function(){
 viewHS.addEventListener("click", function(){
 
     highScore();
+    jsQuiz.remove();
     rules.remove();
     btnStart.remove(); 
 
