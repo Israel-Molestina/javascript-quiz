@@ -200,7 +200,7 @@ choices.addEventListener("click", function(event) {
 
             choices.appendChild(showP);
             showP.textContent = "Correct!";
-            showP.style.display = "center";
+            showP.classList.add("center");
             correctAnswers++;
             index++;
         
@@ -209,7 +209,8 @@ choices.addEventListener("click", function(event) {
         else {
             
             choices.appendChild(showP);
-            showP.textContent = "Incorrect";
+            showP.textContent = "Incorrect!";
+            showP.classList.add("center");
             time -= 5;
             index++;
 

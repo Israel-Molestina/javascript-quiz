@@ -1,18 +1,12 @@
 .border {
-    background-color: rgb(231, 230, 230);
+    background-color: rgb(211, 209, 209);
     margin-top: 100px;
     margin-bottom: 90px;
     padding-bottom: 20px;
 }
 
 .header-background {
-    /* background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-        ),
-        url(../pics/header-background.jpg); */
-    padding-top: 25pxx;
+    padding-top: 25px;
     padding-bottom: 20px;
 }
 
@@ -48,11 +42,23 @@ h2 {
     cursor: pointer;
   }
 
+  .btnTwo {
+    background-color: rgb(108, 255, 248); 
+    cursor: pointer;
+    border-width: thick;
+    border-color: cadetblue;
+  }
+
   fieldset {
-      margin-bottom: 20px;
-      border: thick;
+    margin-bottom: 20px;
+    border: thick;
   }
 
   footer {
-      padding-top: 20px;
+    padding-top: 20px;
+  }
+
+  .center {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
   }
