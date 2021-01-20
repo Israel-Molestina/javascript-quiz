@@ -18,6 +18,7 @@ var btnBack = document.querySelector("#btnBack");
 var btnReset = document.querySelector("#btnReset");
 var hsOutput = document.querySelector("#hsOutput");
 var viewHS = document.querySelector("#viewHS");
+var jsQuiz = document.querySelector("#jsQuiz");
 var arr = [];
 
 // changes style of cursor when hovering over high score and time on main page
@@ -87,6 +88,7 @@ function startQuiz() {
      // Hides the content on page once start quiz button is pressed
      rules.remove();
      btnStart.remove(); 
+     jsQuiz.remove();
 
     showBtn();
      // calls the timer funciton to run

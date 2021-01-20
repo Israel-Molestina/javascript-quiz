@@ -17,8 +17,13 @@
 }
 
 h1 {
-    color: rgb(240, 118, 118);
-    font-family: 'Lobster', cursive;
+    color: rgb(97, 112, 201);
+    font-family: 'PT Sans', sans-serif;
+}
+
+h2 {
+    color: rgb(31, 84, 114);
+    font-family: 'PT Sans', sans-serif;
 }
 
 #navflex {
@@ -31,8 +36,7 @@ h1 {
 
 .btn {
     border: none;
-    background-color: hsl(268, 52%, 60%);
-    border-radius: 25px;
+    background-color: hsl(212, 48%, 45%);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     color: hsl(0, 0%, 100%);
     display: inline-block;
@@ -47,4 +51,8 @@ h1 {
   fieldset {
       margin-bottom: 20px;
       border: thick;
+  }
+
+  footer {
+      padding-top: 20px;
   }
