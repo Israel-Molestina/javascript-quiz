@@ -49,10 +49,10 @@ var qAndA = [
 
     
     {question: "What is JSON.stringify used for?",
-    choice1: "To convert something into an integer",
-    choice2: "To convert something into a string",
-    choice3: "To convert something into an array",
-    choice4: "To convert something into string cheese",
+    choice1: "To convert an object into an integer",
+    choice2: "To convert an object into a string",
+    choice3: "To convert an object into an array",
+    choice4: "To convert an object into string cheese",
     correct: "choice2",
     },  
 
@@ -72,10 +72,10 @@ var qAndA = [
     correct: "choice1",
     },
 
-    {question: "Wich of the follow is a correct way to set up a for loop",
-    choice1: "for (var i = 0; i < lenght; i++) {}",
-    choice2: "for (var i = 0; i < lenght; i--) {}",
-    choice3: "for (i = 0; i < lenght; i++) {}",
+    {question: "Which of the follow is the correct syntax for a loop",
+    choice1: "for (var i = 0; i < length; i++) {}",
+    choice2: "for (var i = 0; i < length; i--) {}",
+    choice3: "for (i = 0; i < length; i++) {}",
     choice4: "All of these are valid for loops",
     correct: "choice4",
     }
@@ -132,7 +132,7 @@ function finished() {
     choices.remove();
     sectionOne.textContent = "Finished!";
     sectionTwo.appendChild(h1);
-    h1.textContent = "Your final score is" + " " + correctAnswers + "!";
+    h1.textContent = `Your final score is ${correctAnswers}!`;
     form.style.display = "block";
     
 }
@@ -149,7 +149,7 @@ function highScore() {
         var key = localStorage.key(i);
         var value = localStorage.getItem(key);
 
-        lsOutput.innerHTML += `${key}: ${value}<br/>`;
+        lsOutput.innerHTML += `${key}: ${value} <hr/> `;
     }
 }
 
