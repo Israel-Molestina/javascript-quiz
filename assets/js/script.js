@@ -18,6 +18,7 @@ var btnBack = document.querySelector("#btnBack");
 var btnReset = document.querySelector("#btnReset");
 var hsOutput = document.querySelector("#hsOutput");
 var viewHS = document.querySelector("#viewHS");
+var arr = [];
 
 // changes style of cursor when hovering over high score and time on main page
 viewHS.style.cursor = "pointer";
@@ -135,10 +136,11 @@ function finished() {
     h1.textContent = `Your final score is ${correctAnswers}!`;
     form.style.display = "block";
     
-}
+};
 
 // function that is called once user submits initials. Will show all highscores stored in local storage
 function highScore() {
+
     sectionOne.textContent = "HighScores"
     h1.remove();
     form.remove();
@@ -146,12 +148,39 @@ function highScore() {
 
     for (var i = 0; i < localStorage.length; i++) {
 
+
         var key = localStorage.key(i);
         var value = localStorage.getItem(key);
 
-        lsOutput.innerHTML += `${key}: ${value} <hr/> `;
+        arr.push({initials:key, score:value});
+
+    };
+
+    arr.sort(compareScore);
+
+    for (var i = 0; i < arr.length; i++) {
+        lsOutput.innerHTML += `${arr[i].initials}: ${arr[i].score} <hr/> `;
     }
-}
+
+};
+
+// makes sure higher scores are on top
+function compareScore(a,b) {
+   
+    if (a.score < b.score) {
+        return 1;
+    }
+
+    else if (a.score > b.score) {
+        return -1;
+    }
+
+    else {
+        return 0;
+    }
+
+
+};
 
 // Added event listener to start quiz button
 btnStart.addEventListener("click", startQuiz);
@@ -211,12 +240,10 @@ btnIni.addEventListener("click", function() {
     var value = correctAnswers;
     console.log(value);
     console.log(key);
-
-    if (value && value) {
         
-        localStorage.setItem(key, value);
-        highScore();
-    }
+    localStorage.setItem(key, value);
+    highScore();
+    
 });
 
 // event listener that takes user back to main page
