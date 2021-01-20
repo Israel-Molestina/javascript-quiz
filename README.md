@@ -27,3 +27,19 @@ To accomplish this task, I've created an application, using mainly JavaScript, t
 ## Below is a link to the finished application along with screenshots of quiz
 
 ### [JavaScript Quiz](https://israel-molestina.github.io/javascript-quiz/)
+
+## Start page
+
+![screengrab of start page](assets/pics/main-page.png)
+
+## Questions
+
+![screengrab of a question](assets/pics/question.png)
+
+## Finished screen
+
+![screengrab of page when quiz finished](assets/pics/finished.png)
+
+## High Score page
+
+![screengrab of high score page](assets/pics/high-scores.png)
