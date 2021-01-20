@@ -28,7 +28,7 @@ To accomplish this task, I've created an application, using mainly JavaScript, t
 
 ### [JavaScript Quiz](https://israel-molestina.github.io/javascript-quiz/)
 
-## Start page
+## Start
 
 ![screengrab of start page](assets/pics/main-page.png)
 
@@ -36,10 +36,10 @@ To accomplish this task, I've created an application, using mainly JavaScript, t
 
 ![screengrab of a question](assets/pics/question.png)
 
-## Finished screen
+## Finished
 
 ![screengrab of page when quiz finished](assets/pics/finished.png)
 
-## High Score page
+## High Score
 
 ![screengrab of high score page](assets/pics/high-scores.png)
